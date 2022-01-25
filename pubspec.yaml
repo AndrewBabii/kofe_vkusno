@@ -35,6 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_riverpod: ^1.0.3
+  flutter_svg: 1.0.3
 
 dev_dependencies:
   flutter_test:
@@ -88,3 +89,11 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  assets:
+    - resources/icons/menu_icon.svg
+    - resources/images/app_bar_logo.png
+
+  fonts:
+    - family: Pacifico
+      fonts:
+        - asset: resources/fonts/Pacifico-Regular.ttf

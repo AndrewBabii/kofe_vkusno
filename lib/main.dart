@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kofe_vkusno/ui/shared/main_layout.dart';
 
 void main() {
   runApp(const ProviderScope(child: App()));
@@ -14,7 +15,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Container(),
+      home: const MainLayout(),
     );
   }
 }
