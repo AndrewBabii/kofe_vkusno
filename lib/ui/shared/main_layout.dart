@@ -14,9 +14,8 @@ class MainLayout extends StatelessWidget{
       ),
       backgroundColor: const Color(0xFF1F1005),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(8, 40, 8, 26),
+        padding:  const EdgeInsets.fromLTRB(8, 40, 8, 26),
         child: Column(
-
         ),
       ),
     );
