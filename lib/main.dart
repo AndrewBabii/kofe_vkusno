@@ -1,10 +1,20 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kofe_vkusno/ui/shared/main_layout.dart';
 
-void main() {
-  runApp(const ProviderScope(child: App()));
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  runApp(ProviderScope(
+    child: EasyLocalization(
+      path: 'resources/translations',
+      supportedLocales: const [Locale('en'), Locale('ru'), Locale('uk')],
+      fallbackLocale: const Locale('uk'),
+      child: const App(),
+    ),
+  ));
 }
 
 class App extends StatelessWidget {
@@ -13,21 +23,25 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: () => MaterialApp(
-              builder: (context, widget) {
-                ScreenUtil.setContext(context);
-                return MediaQuery(
-                  data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-                  child: widget!,
-                );
-              },
-              theme: ThemeData(
-                textTheme: TextTheme(button: TextStyle(fontSize: 45.sp)),
-                primarySwatch: Colors.blue,
-              ),
-              home: const MainLayout(),
-            ));
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: () => MaterialApp(
+        builder: (context, widget) {
+          ScreenUtil.setContext(context);
+          return MediaQuery(
+            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            child: widget!,
+          );
+        },
+        theme: ThemeData(
+          textTheme: TextTheme(button: TextStyle(fontSize: 45.sp)),
+          primarySwatch: Colors.blue,
+        ),
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
+        home: const MainLayout(),
+      ),
+    );
   }
 }
