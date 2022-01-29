@@ -3,16 +3,8 @@ import 'package:flutter/material.dart';
 import 'coffee_logo.dart';
 import 'drawer_icon_button.dart';
 
-class AppBarCustom extends PreferredSize {
-  const AppBarCustom({Key? key})
-      : super(
-            key: key,
-            child: const _AppBarCustomBody(),
-            preferredSize: const Size.fromHeight(80));
-}
-
-class _AppBarCustomBody extends StatelessWidget {
-  const _AppBarCustomBody({Key? key}) : super(key: key);
+class AppBarCustom extends StatelessWidget implements PreferredSizeWidget {
+  const AppBarCustom({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,23 +18,19 @@ class _AppBarCustomBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: topPhonePadding),
-            Stack(
-              alignment: AlignmentDirectional.bottomStart,
-              children: [
-                const Positioned(
-                  left: 30,
-                  child: DrawerIconButton()
-                ),
-                Container(
-                  width: double.maxFinite,
-                  alignment: Alignment.center,
-                  child: CoffeeLogo(onTap: () {
-
-                  })
-                ),
+            Row(
+              children: const [
+                SizedBox(width: 30),
+                DrawerIconButton(),
+                Spacer(),
+                CoffeeLogo(),
+                Spacer(),
+                SizedBox(width: 53), //The width 53 consist of the indent and the width of the menu icon
               ],
             )
           ]),
     );
   }
+  @override
+  Size get preferredSize => const Size.fromHeight(70);
 }

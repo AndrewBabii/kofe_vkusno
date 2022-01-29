@@ -1,0 +1,1 @@
+const String rightQrCode = '9::4pjWsx6/#;H>*';
