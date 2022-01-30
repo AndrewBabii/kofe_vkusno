@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:easy_localization/easy_localization.dart';
 
-class DrawerIconButton extends StatelessWidget{
+class DrawerIconButton extends StatelessWidget {
   const DrawerIconButton({Key? key}) : super(key: key);
 
   @override
@@ -21,14 +22,13 @@ class DrawerIconButton extends StatelessWidget{
               width: 23,
               height: 17,
             ),
-            const Text(
-              'Меню',
-              style: TextStyle(fontSize: 7, fontFamily: 'Pacifico'),
+            Text(
+              'menu'.tr(),
+              style: const TextStyle(fontSize: 7, fontFamily: 'Pacifico'),
             ),
           ],
         ),
       ),
     );
   }
-
 }

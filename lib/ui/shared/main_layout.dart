@@ -13,9 +13,8 @@ class MainLayout extends StatelessWidget{
       appBar: const AppBarCustom(),
       drawer: coffeeDrawer,
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(8, 40, 8, 26),
+        padding:  const EdgeInsets.fromLTRB(8, 40, 8, 26),
         child: Column(
-
         ),
       ),
     );
