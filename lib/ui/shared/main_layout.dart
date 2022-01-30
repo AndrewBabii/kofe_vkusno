@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'widgets/app_bar_custom/app_bar_custom.dart';
 
 class MainLayout extends StatelessWidget{
+  static Route route(){
+    return MaterialPageRoute(builder: (context) => const MainLayout());
+  }
   const MainLayout({Key? key}) : super(key: key);
 
   @override

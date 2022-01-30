@@ -25,11 +25,16 @@ flutter:
   uses-material-design: true
 
   assets:
-    - resources/icons/menu_icon.svg
-    - resources/images/app_bar_logo.png
+    - resources/icons/
+    - resources/images/
+    - resources/images/beverage/
     - resources/translations/
+    - beverages.json
 
   fonts:
     - family: Pacifico
       fonts:
         - asset: resources/fonts/Pacifico-Regular.ttf
+    - family: Pangolin
+      fonts:
+        - asset: resources/fonts/Pangolin-Regular.ttf
