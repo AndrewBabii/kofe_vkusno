@@ -57,7 +57,7 @@ class _QRLayoutState extends ConsumerState<QRLayout>{
 
     qrController.scannedDataStream.firstWhere((scanData) => scanData.code!.compareTo(rightQrCode) == 0)
         .whenComplete(() {
-      ref.watch(cupProvider.notifier).callAddOneCup();
+      ref.watch(cupProvider.notifier).addOneCup();
       Navigator.of(context).popAndPushNamed('/cup');
     });
 

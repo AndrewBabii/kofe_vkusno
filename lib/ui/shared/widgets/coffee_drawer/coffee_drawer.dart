@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../providers.dart';
+import '../../../../providers.dart';
+import 'button_drawer.dart';
 
 final coffeeDrawer = Drawer(
     //backgroundColor: const Color(0xFFFFF7e5),
@@ -14,40 +15,6 @@ final coffeeDrawer = Drawer(
     )
 );
 
-class ButtonDrawer extends StatelessWidget{
-  final String textButton;
-  final String routName;
-
-  const ButtonDrawer({Key? key, required this.textButton, required this.routName}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-          onTap: () {
-            Navigator.of(context).popAndPushNamed(routName);
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  textButton,
-                      style: const TextStyle(
-                          fontSize: 18,
-                          fontFamily: 'Pacifico',
-                          color: Color(0xFF000000),
-                      )
-                  ),
-                const SizedBox(height: 8),
-                const Divider(height: 0, color: Colors.black)
-              ]
-            ),
-          )
-    );
-  }
-
-}
 
 class TestZeroCupButtonDrawer extends ConsumerWidget{
 
@@ -68,6 +35,7 @@ class TestZeroCupButtonDrawer extends ConsumerWidget{
         child: const Text(
           'Обнулить колличество чашек',
           style: TextStyle(
+              fontSize: 18,
               color: Color(0xFFFFF7e5),
               fontStyle: FontStyle.italic
           ),
