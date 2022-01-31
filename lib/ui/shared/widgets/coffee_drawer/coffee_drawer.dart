@@ -5,11 +5,10 @@ import '../../../../providers.dart';
 import 'button_drawer.dart';
 
 final coffeeDrawer = Drawer(
-    //backgroundColor: const Color(0xFFFFF7e5),
     child: Column(children: const [
         SizedBox(height: 120),
         ButtonDrawer(textButton: 'Отсканировать код', routName: '/qr-scanner'),
-        ButtonDrawer(textButton: 'Бессплатная чашка', routName: '/cup'),
+        ButtonDrawer(textButton: 'Бесплатная чашка', routName: '/cup'),
         TestZeroCupButtonDrawer()
       ]
     )
