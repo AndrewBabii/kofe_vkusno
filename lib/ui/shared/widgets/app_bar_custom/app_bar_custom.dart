@@ -19,14 +19,15 @@ class AppBarCustom extends StatelessWidget implements PreferredSizeWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: topPhonePadding),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                SizedBox(width: 30),
-                DrawerIconButton(),
-                CoffeeLogo(),
-                SizedBox(width: 53), //The width 53 consist of the indent and the width of the menu icon
-              ],
+            Padding(
+              padding: const EdgeInsets.only(left: 30, right: 122),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  DrawerIconButton(),
+                  CoffeeLogo(),
+                ],
+              ),
             )
           ]),
     );
