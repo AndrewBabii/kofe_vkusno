@@ -16,10 +16,8 @@ class MainLayout extends StatelessWidget {
             children: [
               TextButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MapScreen()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MapScreen()));
                   },
                   child: const Text('map screen')),
             ],
