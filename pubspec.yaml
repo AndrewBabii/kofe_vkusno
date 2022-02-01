@@ -11,6 +11,7 @@ dependencies:
   easy_localization: ^3.0.0
   flutter:
     sdk: flutter
+  flutter_map: ^0.14.0
   flutter_riverpod: ^1.0.3
   flutter_screenutil: ^5.1.0
   flutter_svg: 1.0.3
