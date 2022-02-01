@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kofe_vkusno/providers.dart';
+import 'package:kofe_vkusno/ui/shared/widgets/coffee_drawer/button_drawer.dart';
 
-import '../../../../providers.dart';
-import 'button_drawer.dart';
 
 final coffeeDrawer = Drawer(
     child: Column(children: const [

@@ -5,7 +5,11 @@ class CupIndicator extends StatelessWidget{
   final Color backgroundColor;
   final bool isBig;
 
-  const CupIndicator({Key? key, required this.backgroundColor, required this.isBig}) : super(key: key);
+  const CupIndicator({
+    Key? key,
+    required this.backgroundColor,
+    required this.isBig,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

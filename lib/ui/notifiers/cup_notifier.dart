@@ -11,7 +11,8 @@ class CupNotifier extends StateNotifier<int?>{
   CupNotifier(int state, {
     required this.callAddOneCup,
     required this.callGetCountCups,
-    required this.callZeroCups}) : super(state);
+    required this.callZeroCups,
+  }) : super(state);
 
   void addOneCup() async {
     await callAddOneCup();

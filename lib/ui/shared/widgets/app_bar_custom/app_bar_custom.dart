@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kofe_vkusno/ui/shared/widgets/app_bar_custom/coffee_logo.dart';
+import 'package:kofe_vkusno/ui/shared/widgets/app_bar_custom/drawer_icon_button.dart';
 
-import 'coffee_logo.dart';
-import 'drawer_icon_button.dart';
+
 
 class AppBarCustom extends StatelessWidget implements PreferredSizeWidget {
   const AppBarCustom({Key? key}) : super(key: key);
@@ -19,12 +20,11 @@ class AppBarCustom extends StatelessWidget implements PreferredSizeWidget {
           children: [
             SizedBox(height: topPhonePadding),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
                 SizedBox(width: 30),
                 DrawerIconButton(),
-                Spacer(),
                 CoffeeLogo(),
-                Spacer(),
                 SizedBox(width: 53), //The width 53 consist of the indent and the width of the menu icon
               ],
             )

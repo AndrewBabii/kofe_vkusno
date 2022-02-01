@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kofe_vkusno/providers.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/app_bar_custom/app_bar_custom.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/coffee_drawer/coffee_drawer.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/cup_layout_widgets/circle_button.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/cup_layout_widgets/cup_indicator.dart';
 
-import '../../providers.dart';
 
 class CupLayout extends ConsumerWidget{
   const CupLayout({Key? key}) : super(key: key);

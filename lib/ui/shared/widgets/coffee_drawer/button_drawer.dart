@@ -4,7 +4,11 @@ class ButtonDrawer extends StatelessWidget{
   final String textButton;
   final String routName;
 
-  const ButtonDrawer({Key? key, required this.textButton, required this.routName}) : super(key: key);
+  const ButtonDrawer({
+    Key? key,
+    required this.textButton,
+    required this.routName,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
