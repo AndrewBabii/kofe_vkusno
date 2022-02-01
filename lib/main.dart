@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kofe_vkusno/ui/shared/main_layout.dart';
+import 'package:kofe_vkusno/ui/shared/qr_layout.dart';
+import 'package:kofe_vkusno/ui/shared/cup_layout.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,6 +18,7 @@ Future<void> main() async {
       child: const App(),
     ),
   ));
+
 }
 
 class App extends StatelessWidget {
@@ -22,25 +26,36 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: () => MaterialApp(
-        builder: (context, widget) {
-          ScreenUtil.setContext(context);
-          return MediaQuery(
-            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-            child: widget!,
-          );
-        },
-        theme: ThemeData(
-          textTheme: TextTheme(button: TextStyle(fontSize: 45.sp)),
-          primarySwatch: Colors.blue,
+    return MaterialApp(
+      home: ScreenUtilInit(
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: () => MaterialApp(
+          builder: (context, widget) {
+            ScreenUtil.setContext(context);
+            return MediaQuery(
+              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+              child: widget!,
+            );
+          },
+          theme: ThemeData(
+            textTheme: TextTheme(button: TextStyle(fontSize: 45.sp)),
+            primarySwatch: Colors.blue,
+            scaffoldBackgroundColor: const Color(0xFF1F1005),
+            drawerTheme: const DrawerThemeData(
+                backgroundColor: Color(0xFFFFF7e5),
+              )
+          ),
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
+          initialRoute: '/',
+          routes: {
+              '/' : (context) => const MainLayout(),
+              '/qr-scanner' : (context) => const QRLayout(),
+              '/cup' : (context) => const CupLayout(),
+          },
         ),
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
-        home: const MainLayout(),
       ),
     );
   }

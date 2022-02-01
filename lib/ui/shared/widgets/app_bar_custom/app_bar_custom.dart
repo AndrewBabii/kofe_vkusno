@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:kofe_vkusno/ui/shared/widgets/app_bar_custom/coffee_logo.dart';
+import 'package:kofe_vkusno/ui/shared/widgets/app_bar_custom/drawer_icon_button.dart';
 
-import 'coffee_logo.dart';
-import 'drawer_icon_button.dart';
 
-class AppBarCustom extends PreferredSize {
-  const AppBarCustom({Key? key})
-      : super(
-            key: key,
-            child: const _AppBarCustomBody(),
-            preferredSize: const Size.fromHeight(80));
-}
 
-class _AppBarCustomBody extends StatelessWidget {
-  const _AppBarCustomBody({Key? key}) : super(key: key);
+class AppBarCustom extends StatelessWidget implements PreferredSizeWidget {
+  const AppBarCustom({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,23 +19,19 @@ class _AppBarCustomBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: topPhonePadding),
-            Stack(
-              alignment: AlignmentDirectional.bottomStart,
-              children: [
-                const Positioned(
-                  left: 30,
-                  child: DrawerIconButton()
-                ),
-                Container(
-                  width: double.maxFinite,
-                  alignment: Alignment.center,
-                  child: CoffeeLogo(onTap: () {
-
-                  })
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(left: 30, right: 122),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  DrawerIconButton(),
+                  CoffeeLogo(),
+                ],
+              ),
             )
           ]),
     );
   }
+  @override
+  Size get preferredSize => const Size.fromHeight(70);
 }
