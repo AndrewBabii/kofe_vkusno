@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class ButtonDrawer extends StatelessWidget{
-  final String textButton;
+class ButtonDrawer extends StatelessWidget {
+  final String label;
   final String routName;
 
   const ButtonDrawer({
     Key? key,
-    required this.textButton,
+    required this.label,
     required this.routName,
   }) : super(key: key);
 
@@ -18,23 +18,17 @@ class ButtonDrawer extends StatelessWidget{
         },
         child: Padding(
           padding: const EdgeInsets.all(20),
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                    textButton,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Pacifico',
-                      color: Color(0xFF000000),
-                    )
-                ),
-                const SizedBox(height: 8),
-                const Divider(height: 0, color: Colors.black)
-              ]
-          ),
-        )
-    );
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text(label,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontFamily: 'Pacifico',
+                  color: Color(0xFF000000),
+                )),
+            const SizedBox(height: 8),
+            const Divider(height: 0, color: Colors.black)
+          ]),
+        ));
   }
-
 }

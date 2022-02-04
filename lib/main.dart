@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kofe_vkusno/ui/shared/main_layout.dart';
 import 'package:kofe_vkusno/ui/shared/qr_screen.dart';
 import 'package:kofe_vkusno/ui/shared/cup_screen.dart';
-
+import 'package:kofe_vkusno/ui/shared/widgets/map_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +18,6 @@ Future<void> main() async {
       child: const App(),
     ),
   ));
-
 }
 
 class App extends StatelessWidget {
@@ -26,7 +25,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
+    return MaterialApp(
+      home: ScreenUtilInit(
         minTextAdapt: true,
         splitScreenMode: true,
         builder: () => MaterialApp(
@@ -38,24 +38,24 @@ class App extends StatelessWidget {
             );
           },
           theme: ThemeData(
-            textTheme: TextTheme(button: TextStyle(fontSize: 45.sp)),
-            primarySwatch: Colors.blue,
-            scaffoldBackgroundColor: const Color(0xFF1F1005),
-            drawerTheme: const DrawerThemeData(
+              textTheme: TextTheme(button: TextStyle(fontSize: 45.sp)),
+              primarySwatch: Colors.blue,
+              scaffoldBackgroundColor: const Color(0xFF1F1005),
+              drawerTheme: const DrawerThemeData(
                 backgroundColor: Color(0xFFFFF7e5),
-              )
-          ),
+              )),
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           initialRoute: '/',
           routes: {
-              '/' : (context) => const MainLayout(),
-              '/qr-scanner' : (context) => const QRScreen(),
-              '/cup' : (context) => const CupScreen(),
+            '/': (context) => const MainLayout(),
+            '/qr-scanner': (context) => const QRScreen(),
+            '/cup': (context) => const CupScreen(),
+            '/mapScreen': (context) => MapScreen()
           },
         ),
-
+      ),
     );
   }
 }
