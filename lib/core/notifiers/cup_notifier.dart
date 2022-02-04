@@ -1,6 +1,6 @@
-import 'package:kofe_vkusno/ui/usecases/cup_usecases/add_one_cup.dart';
-import 'package:kofe_vkusno/ui/usecases/cup_usecases/get_count_cups.dart';
-import 'package:kofe_vkusno/ui/usecases/cup_usecases/zero_cups.dart';
+import 'package:kofe_vkusno/core/usecases/cup_usecases/add_one_cup.dart';
+import 'package:kofe_vkusno/core/usecases/cup_usecases/get_count_cups.dart';
+import 'package:kofe_vkusno/core/usecases/cup_usecases/zero_cups.dart';
 import 'package:state_notifier/state_notifier.dart';
 
 class CupNotifier extends StateNotifier<int?>{

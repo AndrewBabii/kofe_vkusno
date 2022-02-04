@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kofe_vkusno/ui/shared/main_layout.dart';
-import 'package:kofe_vkusno/ui/shared/qr_layout.dart';
-import 'package:kofe_vkusno/ui/shared/cup_layout.dart';
+import 'package:kofe_vkusno/ui/shared/qr_screen.dart';
+import 'package:kofe_vkusno/ui/shared/cup_screen.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/map_screen.dart';
 
 Future<void> main() async {
@@ -50,8 +50,8 @@ class App extends StatelessWidget {
           initialRoute: '/',
           routes: {
             '/': (context) => const MainLayout(),
-            '/qr-scanner': (context) => const QRLayout(),
-            '/cup': (context) => const CupLayout(),
+            '/qr-scanner': (context) => const QRScreen(),
+            '/cup': (context) => const CupScreen(),
             '/mapScreen': (context) => MapScreen()
           },
         ),

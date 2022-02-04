@@ -1,14 +1,15 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kofe_vkusno/providers.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/app_bar_custom/app_bar_custom.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/coffee_drawer/coffee_drawer.dart';
-import 'package:kofe_vkusno/ui/shared/widgets/cup_layout_widgets/circle_button.dart';
-import 'package:kofe_vkusno/ui/shared/widgets/cup_layout_widgets/cup_indicator.dart';
+import 'package:kofe_vkusno/ui/shared/widgets/cup_screen_widgets/circle_button.dart';
+import 'package:kofe_vkusno/ui/shared/widgets/cup_screen_widgets/cup_indicator.dart';
 
 
-class CupLayout extends ConsumerWidget{
-  const CupLayout({Key? key}) : super(key: key);
+class CupScreen extends ConsumerWidget{
+  const CupScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -37,9 +38,9 @@ class CupLayout extends ConsumerWidget{
             child: Column(
               children: [
                 const SizedBox(height: 30),
-                const Text(
-                    'Купи пять чашек кофе и\nполучи шестую в подарок!',
-                  style: TextStyle(
+                Text(
+                    'buy_five_cups'.tr(),
+                  style: const TextStyle(
                     color: Color(0xFF422712),
                     fontSize: 18,
                     fontFamily: 'Pacifico'

@@ -6,14 +6,14 @@ import 'package:kofe_vkusno/global/const/qr_code_string.dart';
 import 'package:kofe_vkusno/providers.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
-class QRLayout extends ConsumerStatefulWidget {
-  const QRLayout({Key? key}) : super(key: key);
+class QRScreen extends ConsumerStatefulWidget {
+  const QRScreen({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _QRLayoutState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _QRScreenState();
 }
 
-class _QRLayoutState extends ConsumerState<QRLayout>{
+class _QRScreenState extends ConsumerState<QRScreen>{
   QRViewController? qrController;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
 

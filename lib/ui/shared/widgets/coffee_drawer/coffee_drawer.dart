@@ -1,16 +1,19 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kofe_vkusno/providers.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/coffee_drawer/button_drawer.dart';
 
 final coffeeDrawer = Drawer(
-    child: Column(children: const [
-  SizedBox(height: 120),
-  ButtonDrawer(label: 'Отсканировать код', routName: '/qr-scanner'),
-  ButtonDrawer(label: 'Бесплатная чашка', routName: '/cup'),
-  ButtonDrawer(label: 'Map Screen', routName: '/mapScreen'),
-  TestZeroCupButtonDrawer()
-]));
+    child: Column(children: [
+      const SizedBox(height: 120),
+      ButtonDrawer(label: 'scan_the_code'.tr(), routName: '/qr-scanner'),
+      ButtonDrawer(label: 'free_cup'.tr(), routName: '/cup'),
+      ButtonDrawer(label: 'Map Screen', routName: '/mapScreen'),
+      const TestZeroCupButtonDrawer()
+    ]
+  )
+);
 
 class TestZeroCupButtonDrawer extends ConsumerWidget {
   const TestZeroCupButtonDrawer({Key? key}) : super(key: key);
@@ -34,6 +37,7 @@ class TestZeroCupButtonDrawer extends ConsumerWidget {
               fontSize: 18,
               color: Color(0xFFFFF7e5),
               fontStyle: FontStyle.italic),
-        ));
+        )
+    );
   }
 }
