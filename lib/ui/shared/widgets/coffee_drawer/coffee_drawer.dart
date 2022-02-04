@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kofe_vkusno/providers.dart';
@@ -5,11 +6,11 @@ import 'package:kofe_vkusno/ui/shared/widgets/coffee_drawer/button_drawer.dart';
 
 
 final coffeeDrawer = Drawer(
-    child: Column(children: const [
-        SizedBox(height: 120),
-        ButtonDrawer(textButton: 'Отсканировать код', routName: '/qr-scanner'),
-        ButtonDrawer(textButton: 'Бесплатная чашка', routName: '/cup'),
-        TestZeroCupButtonDrawer()
+    child: Column(children: [
+        const SizedBox(height: 120),
+        ButtonDrawer(textButton: 'scan_the_code'.tr(), routName: '/qr-scanner'),
+        ButtonDrawer(textButton: 'free_cup'.tr(), routName: '/cup'),
+        const TestZeroCupButtonDrawer()
       ]
     )
 );

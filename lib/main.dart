@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kofe_vkusno/ui/shared/main_layout.dart';
-import 'package:kofe_vkusno/ui/shared/qr_layout.dart';
-import 'package:kofe_vkusno/ui/shared/cup_layout.dart';
+import 'package:kofe_vkusno/ui/shared/qr_screen.dart';
+import 'package:kofe_vkusno/ui/shared/cup_screen.dart';
 
 
 Future<void> main() async {
@@ -26,8 +26,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ScreenUtilInit(
+    return ScreenUtilInit(
         minTextAdapt: true,
         splitScreenMode: true,
         builder: () => MaterialApp(
@@ -52,11 +51,11 @@ class App extends StatelessWidget {
           initialRoute: '/',
           routes: {
               '/' : (context) => const MainLayout(),
-              '/qr-scanner' : (context) => const QRLayout(),
-              '/cup' : (context) => const CupLayout(),
+              '/qr-scanner' : (context) => const QRScreen(),
+              '/cup' : (context) => const CupScreen(),
           },
         ),
-      ),
+
     );
   }
 }

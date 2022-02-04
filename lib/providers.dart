@@ -1,9 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kofe_vkusno/models/repositories/cups_repository.dart';
-import 'package:kofe_vkusno/ui/notifiers/cup_notifier.dart';
-import 'package:kofe_vkusno/ui/usecases/cup_usecases/add_one_cup.dart';
-import 'package:kofe_vkusno/ui/usecases/cup_usecases/get_count_cups.dart';
-import 'package:kofe_vkusno/ui/usecases/cup_usecases/zero_cups.dart';
+import 'package:kofe_vkusno/core/notifiers/cup_notifier.dart';
+import 'package:kofe_vkusno/core/repositories/cups_repository.dart';
+import 'package:kofe_vkusno/core/usecases/cup_usecases/add_one_cup.dart';
+import 'package:kofe_vkusno/core/usecases/cup_usecases/get_count_cups.dart';
+import 'package:kofe_vkusno/core/usecases/cup_usecases/zero_cups.dart';
+
 
 
 //cups Repository
