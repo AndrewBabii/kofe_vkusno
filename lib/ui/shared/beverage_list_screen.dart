@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kofe_vkusno/core/models/beverage.dart';
-import 'package:kofe_vkusno/core/repository/beverage_json_repository.dart';
-import 'package:kofe_vkusno/core/repository/beverage_repository.dart';
+import 'package:kofe_vkusno/core/repositories/beverage_json_repository.dart';
+import 'package:kofe_vkusno/core/repositories/beverage_repository.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/app_bar_custom/app_bar_custom.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/back_and_home_menu.dart';
+import 'package:kofe_vkusno/ui/shared/widgets/coffee_drawer/coffee_drawer.dart';
 
 class BeverageList extends StatelessWidget {
-  static Route route(){
-    return MaterialPageRoute(builder: (context) => const BeverageList());
-  }
   const BeverageList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppBarCustom(),
-      drawer: const Drawer(
-        backgroundColor: Color(0xFFFFF7e5),
-      ),
+      drawer: coffeeDrawer,
       body: Container(
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
         decoration: BoxDecoration(
