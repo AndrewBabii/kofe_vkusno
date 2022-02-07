@@ -50,10 +50,10 @@ class App extends StatelessWidget {
           locale: context.locale,
           initialRoute: '/',
           routes: {
-            '/': (context) => const MainLayout(),
+            '/': (context) => MainLayout(child: Column()),
             '/qr-scanner': (context) => const QRScreen(),
             '/cup': (context) => const CupScreen(),
-            '/mapScreen': (context) => MapScreen(),
+            '/mapScreen': (context) => const MapScreen(),
             '/beverageList': (context) => BeverageList()
           },
         ),
