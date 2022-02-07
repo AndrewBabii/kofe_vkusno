@@ -6,7 +6,7 @@ import 'package:kofe_vkusno/ui/shared/beverage_list_screen.dart';
 import 'package:kofe_vkusno/ui/shared/main_layout.dart';
 import 'package:kofe_vkusno/ui/shared/qr_screen.dart';
 import 'package:kofe_vkusno/ui/shared/cup_screen.dart';
-import 'package:kofe_vkusno/ui/shared/widgets/map_screen.dart';
+import 'package:kofe_vkusno/ui/shared/map_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
