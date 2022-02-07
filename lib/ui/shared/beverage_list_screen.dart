@@ -50,10 +50,11 @@ class _Body extends ConsumerWidget {
     return FutureBuilder(
       future: repository.getBeverageList(),
       builder: (context, AsyncSnapshot<List<Beverage>> snapshot) {
+        List<Beverage>? beverages = snapshot.data;
         if (snapshot.hasData) {
           return ListView.separated(
             separatorBuilder: (context, index) => const SizedBox(height: 25),
-            itemCount: snapshot.data!.length,
+            itemCount: beverages?.length??0,
             itemBuilder: (context, index) {
               return SizedBox(
                 height: 110.0,
@@ -64,7 +65,7 @@ class _Body extends ConsumerWidget {
                         borderRadius: BorderRadius.circular(4),
                         child: Image(
                           fit: BoxFit.fill,
-                          image: snapshot.data![index].picture,
+                          image: beverages?[index].picture??const AssetImage("resources/images/beverage/beverage_01.png"),
                           width: 100,
                           height: 110,
                         )),
@@ -73,10 +74,10 @@ class _Body extends ConsumerWidget {
                         child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(snapshot.data![index].name,
+                        Text(beverages?[index].name??"No name",
                             style: const TextStyle(
                                 fontSize: 18, fontFamily: 'Pangolin')),
-                        Text(snapshot.data![index].description,
+                        Text(beverages?[index].description??"No description",
                             style: const TextStyle(
                                 fontSize: 13, fontFamily: 'Pangolin')),
                       ],

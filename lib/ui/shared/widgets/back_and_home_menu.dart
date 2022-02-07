@@ -11,7 +11,6 @@ class BackAndHome extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         CircleButton(icon: Icons.arrow_back, onPressed: () => Navigator.of(context).pop()),
-        const Spacer(),
         CircleButton(icon: Icons.home, onPressed: () => Navigator.of(context).popAndPushNamed('/')),
       ],
     );
