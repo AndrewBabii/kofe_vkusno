@@ -1,0 +1,62 @@
+[
+  {
+    "id":1,
+    "picture":"beverage_01",
+    "name":"Эспрессо",
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id":2,
+    "picture":"beverage_02",
+    "name":"Эспрессо с молоком",
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id":3,
+    "picture":"beverage_00",
+    "name":"Эспрессо с молоком",
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id":4,
+    "picture":"beverage_00",
+    "name":"Капучино ",
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id":5,
+    "picture":"beverage_00",
+    "name":"Белый кофе",
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id":6,
+    "picture":"beverage_00",
+    "name":"Белый кофе",
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id":7,
+    "picture":"beverage_00",
+    "name":"Мокко ",
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id":8,
+    "picture":"beverage_00",
+    "name":"Пуленепробиваемый кофе",
+    "description":"1 чашка чёрного кофе, 2 столовых ложки сливочного масла и 1 столовая ложка кокосового масла"
+  },
+  {
+    "id":9,
+    "picture":"beverage_00",
+    "name":"Кофе с яйцом",
+    "description":"вьетнамский напиток, состоящий из яичных желтков, сахара, сгущённого молока и робусты"
+  },
+  {
+    "id":10,
+    "picture":"beverage_00",
+    "name":"Кофе со льдом",
+    "description":"не путать с кофе холодной заварки. Кофе со льдом готовится с помощью горячей заварки, а потом охлаждается."
+  }
+]
