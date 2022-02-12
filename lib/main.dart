@@ -11,14 +11,25 @@ import 'package:kofe_vkusno/ui/shared/map_screen.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  runApp(ProviderScope(
-    child: EasyLocalization(
-      path: 'resources/translations',
-      supportedLocales: const [Locale('en'), Locale('ru'), Locale('uk')],
-      fallbackLocale: const Locale('uk'),
-      child: const App(),
+  runApp(
+    ProviderScope(
+      child: EasyLocalization(
+        path: 'resources/translations',
+        supportedLocales: const [
+          Locale('en'),
+          Locale('ru'),
+          Locale('ua'),
+        ],
+        fallbackLocale: const Locale('ua'),
+        child: ScreenUtilInit(
+          designSize: const Size(360, 720),
+          minTextAdapt: true,
+          splitScreenMode: true,
+          builder: () => const App(),
+        ),
+      ),
     ),
-  ));
+  );
 }
 
 class App extends StatelessWidget {
@@ -27,37 +38,31 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ScreenUtilInit(
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: () => MaterialApp(
-          builder: (context, widget) {
-            ScreenUtil.setContext(context);
-            return MediaQuery(
-              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-              child: widget!,
-            );
-          },
-          theme: ThemeData(
-              textTheme: TextTheme(button: TextStyle(fontSize: 45.sp)),
-              primarySwatch: Colors.blue,
-              scaffoldBackgroundColor: const Color(0xFF1F1005),
-              drawerTheme: const DrawerThemeData(
-                backgroundColor: Color(0xFFFFF7e5),
-              )),
-          localizationsDelegates: context.localizationDelegates,
-          supportedLocales: context.supportedLocales,
-          locale: context.locale,
-          initialRoute: '/',
-          routes: {
-            '/': (context) => MainLayout(child: Column()),
-            '/qr-scanner': (context) => const QRScreen(),
-            '/cup': (context) => const CupScreen(),
-            '/mapScreen': (context) => const MapScreen(),
-            '/beverageList': (context) => BeverageList()
-          },
-        ),
-      ),
+      builder: (context, widget) {
+        ScreenUtil.setContext(context);
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+          child: widget!,
+        );
+      },
+      theme: ThemeData(
+          textTheme: TextTheme(button: TextStyle(fontSize: 45.sp)),
+          primarySwatch: Colors.blue,
+          scaffoldBackgroundColor: const Color(0xFF1F1005),
+          drawerTheme: const DrawerThemeData(
+            backgroundColor: Color(0xFFFFF7e5),
+          )),
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => MainLayout(child: Column()),
+        '/qr-scanner': (context) => const QRScreen(),
+        '/cup': (context) => const CupScreen(),
+        '/mapScreen': (context) => const MapScreen(),
+        '/beverageList': (context) => BeverageList()
+      },
     );
   }
 }
