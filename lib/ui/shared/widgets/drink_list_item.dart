@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kofe_vkusno/ui/shared/drink_screen.dart';
 
 class BeverageListItem extends StatelessWidget{
   final ImageProvider picture;
@@ -30,7 +31,16 @@ class BeverageListItem extends StatelessWidget{
       child: Material(
         color: const Color(0x00000000),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => DrinkScreen(
+                  picture: picture,
+                  description: description,
+                ),
+              ),
+            );
+          },
           child: Padding(
             padding: const EdgeInsets.all(4),
             child: Row(
@@ -41,8 +51,7 @@ class BeverageListItem extends StatelessWidget{
                     width: 80,
                     height: 80,
                     decoration: BoxDecoration(
-                      borderRadius:
-                      const BorderRadius.all(Radius.circular(4)),
+                      borderRadius: const BorderRadius.all(Radius.circular(4)),
                       border: Border.all(
                           color: const Color(0xFF422712), width: 3),
                     ),
