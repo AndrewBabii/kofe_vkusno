@@ -5,6 +5,7 @@ import 'package:kofe_vkusno/core/repositories/beverage_json_repository.dart';
 import 'package:kofe_vkusno/core/repositories/beverage_repository.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/app_bar_custom/app_bar_custom.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/back_and_home_menu.dart';
+import 'package:kofe_vkusno/ui/shared/widgets/drink_list_item.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/coffee_drawer/coffee_drawer.dart';
 
 class BeverageList extends StatelessWidget {
@@ -16,7 +17,7 @@ class BeverageList extends StatelessWidget {
       appBar: const AppBarCustom(),
       drawer: coffeeDrawer,
       body: Container(
-        padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
         decoration: BoxDecoration(
           image: DecorationImage(
             colorFilter: ColorFilter.mode(
@@ -31,7 +32,7 @@ class BeverageList extends StatelessWidget {
             const BackAndHome(),
             Expanded(
                 child: Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
+                    padding: const EdgeInsets.only(top: 15),
                     child: _Body()))
           ],
         ),
@@ -53,37 +54,17 @@ class _Body extends ConsumerWidget {
         List<Beverage>? beverages = snapshot.data;
         if (snapshot.hasData) {
           return ListView.separated(
-            separatorBuilder: (context, index) => const SizedBox(height: 25),
-            itemCount: beverages?.length??0,
+            separatorBuilder: (context, index) => const SizedBox(height: 20),
+            itemCount: beverages?.length ?? 0,
             itemBuilder: (context, index) {
-              return SizedBox(
-                height: 110.0,
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    ClipRRect(
-                        borderRadius: BorderRadius.circular(4),
-                        child: Image(
-                          fit: BoxFit.fill,
-                          image: beverages?[index].picture??const AssetImage("resources/images/beverage/beverage_01.png"),
-                          width: 100,
-                          height: 110,
-                        )),
-                    const SizedBox(width: 8),
-                    Expanded(
-                        child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(beverages?[index].name??"No name",
-                            style: const TextStyle(
-                                fontSize: 18, fontFamily: 'Pangolin')),
-                        Text(beverages?[index].description??"No description",
-                            style: const TextStyle(
-                                fontSize: 13, fontFamily: 'Pangolin')),
-                      ],
-                    ))
-                  ],
-                ),
+              return BeverageListItem(
+                picture: beverages?[index].picture ??
+                    const AssetImage(
+                        "resources/images/beverage/beverage_01.png"),
+                name: beverages?[index].name ?? "No name",
+                description: beverages?[index].description ??
+                    "No description",
+                onTap: () {},
               );
             },
           );
