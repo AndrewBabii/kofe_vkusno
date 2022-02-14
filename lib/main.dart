@@ -54,7 +54,7 @@ class App extends StatelessWidget {
             '/qr-scanner': (context) => const QRScreen(),
             '/cup': (context) => const CupScreen(),
             '/mapScreen': (context) => MapScreen(),
-            '/beverageList': (context) => BeverageList()
+            '/beverageList': (context) => DrinkListScreen()
           },
         ),
       ),

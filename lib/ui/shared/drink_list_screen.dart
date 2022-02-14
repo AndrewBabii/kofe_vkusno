@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kofe_vkusno/core/models/beverage.dart';
-import 'package:kofe_vkusno/core/repositories/beverage_json_repository.dart';
-import 'package:kofe_vkusno/core/repositories/beverage_repository.dart';
+import 'package:kofe_vkusno/providers.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/app_bar_custom/app_bar_custom.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/back_and_home_menu.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/drink_list_item.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/coffee_drawer/coffee_drawer.dart';
 
-class BeverageList extends StatelessWidget {
-  const BeverageList({Key? key}) : super(key: key);
+class DrinkListScreen extends StatelessWidget {
+  const DrinkListScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,35 +39,21 @@ class BeverageList extends StatelessWidget {
   }
 }
 
-final beverageRepository = Provider((_) => BeverageJSONRepository());
-
 class _Body extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final BeverageRepository repository = ref.watch(beverageRepository);
+    var drinkList = ref.watch(drinksListProvider);
 
-    return FutureBuilder(
-      future: repository.getBeverageList(),
-      builder: (context, AsyncSnapshot<List<Beverage>> snapshot) {
-        List<Beverage>? beverages = snapshot.data;
-        if (snapshot.hasData) {
-          return ListView.separated(
-            separatorBuilder: (context, index) => const SizedBox(height: 20),
-            itemCount: beverages?.length ?? 0,
-            itemBuilder: (context, index) {
-              return BeverageListItem(
-                picture: beverages?[index].picture ??
-                    const AssetImage(
-                        "resources/images/beverage/beverage_01.png"),
-                name: beverages?[index].name ?? "No name",
-                description: beverages?[index].description ??
-                    "No description",
-              );
-            },
-          );
-        } else {
-          return const LinearProgressIndicator();
-        }
+    return ListView.separated(
+      separatorBuilder: (context, index) => const SizedBox(height: 20),
+      itemCount: drinkList?.length ?? 0,
+      itemBuilder: (context, index) {
+        return BeverageListItem(
+          picture: drinkList?[index].picture ??
+              const AssetImage("resources/images/beverage/beverage_01.png"),
+          name: drinkList?[index].name ?? "No name",
+          description: drinkList?[index].description ?? "No description",
+        );
       },
     );
   }

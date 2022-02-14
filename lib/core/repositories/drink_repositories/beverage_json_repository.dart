@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:kofe_vkusno/core/models/beverage.dart';
-import 'package:kofe_vkusno/core/repositories/beverage_repository.dart';
+import 'package:kofe_vkusno/core/repositories/drink_repositories/beverage_repository.dart';
 
 
 class BeverageJSONRepository extends BeverageRepository{
