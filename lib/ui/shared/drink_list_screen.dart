@@ -64,7 +64,6 @@ class _Body extends ConsumerWidget {
                 name: beverages?[index].name ?? "No name",
                 description: beverages?[index].description ??
                     "No description",
-                onTap: () {},
               );
             },
           );
