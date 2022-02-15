@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kofe_vkusno/ui/shared/beverage_list_screen.dart';
+import 'package:kofe_vkusno/ui/shared/drink_list_screen.dart';
 import 'package:kofe_vkusno/ui/shared/main_layout.dart';
 import 'package:kofe_vkusno/ui/shared/qr_screen.dart';
 import 'package:kofe_vkusno/ui/shared/cup_screen.dart';
@@ -53,8 +53,8 @@ class App extends StatelessWidget {
             '/': (context) => MainLayout(child: Column()),
             '/qr-scanner': (context) => const QRScreen(),
             '/cup': (context) => const CupScreen(),
-            '/mapScreen': (context) => const MapScreen(),
-            '/beverageList': (context) => BeverageList()
+            '/mapScreen': (context) => MapScreen(),
+            '/beverageList': (context) => DrinkListScreen()
           },
         ),
       ),
