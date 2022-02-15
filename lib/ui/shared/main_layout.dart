@@ -3,7 +3,8 @@ import 'package:kofe_vkusno/ui/shared/widgets/app_bar_custom/app_bar_custom.dart
 import 'package:kofe_vkusno/ui/shared/widgets/coffee_drawer/coffee_drawer.dart';
 
 class MainLayout extends StatelessWidget {
-  const MainLayout({Key? key}) : super(key: key);
+  const MainLayout({required this.child, Key? key}) : super(key: key);
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class MainLayout extends StatelessWidget {
       drawer: coffeeDrawer,
       body: Padding(
         padding: const EdgeInsets.fromLTRB(8, 40, 8, 26),
-        child: Column(),
+        child: child,
       ),
     );
   }
