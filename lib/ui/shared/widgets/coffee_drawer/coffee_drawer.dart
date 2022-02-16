@@ -9,7 +9,7 @@ final coffeeDrawer = Drawer(
       const SizedBox(height: 120),
       ButtonDrawer(label: 'scan_the_code'.tr(), routName: '/qr-scanner'),
       ButtonDrawer(label: 'free_cup'.tr(), routName: '/cup'),
-      ButtonDrawer(label: 'Map Screen'.tr(), routName: '/mapScreen'),
+      ButtonDrawer(label: 'map_screen'.tr(), routName: '/mapScreen'),
       ButtonDrawer(label: 'beverage_list'.tr(), routName: '/beverageList'),
       const TestZeroCupButtonDrawer()
     ]

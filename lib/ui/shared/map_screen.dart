@@ -8,6 +8,7 @@ import 'package:kofe_vkusno/ui/shared/widgets/app_bar_custom/app_bar_custom.dart
 import 'package:kofe_vkusno/ui/shared/widgets/back_and_home_menu.dart';
 import 'package:kofe_vkusno/ui/shared/widgets/coffee_drawer/coffee_drawer.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MapScreen extends StatelessWidget {
   const MapScreen({Key? key}) : super(key: key);
@@ -111,7 +112,10 @@ class _Instagram extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () async {
-
+        await launch(
+          instagramURL,
+          universalLinksOnly: true,
+        );
       },
       child: Row(children: [
         Container(
